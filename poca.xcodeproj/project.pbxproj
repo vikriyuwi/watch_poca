@@ -1,0 +1,484 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B2321EDB2BF758020019061A /* poca Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = B2321EDA2BF758020019061A /* poca Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		B2321EE02BF758020019061A /* pocaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2321EDF2BF758020019061A /* pocaApp.swift */; };
+		B2321EE22BF758020019061A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2321EE12BF758020019061A /* ContentView.swift */; };
+		B2321EE42BF758040019061A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2321EE32BF758040019061A /* Assets.xcassets */; };
+		B2321EE72BF758040019061A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2321EE62BF758040019061A /* Preview Assets.xcassets */; };
+		B2321EF52BF758720019061A /* LandingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2321EF42BF758720019061A /* LandingView.swift */; };
+		B262AAA52BF7688400CD8F5C /* CountDownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B262AAA42BF7688400CD8F5C /* CountDownView.swift */; };
+		B262AAAA2BF7A5AD00CD8F5C /* ButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B262AAA92BF7A5AD00CD8F5C /* ButtonStyle.swift */; };
+		B262AAB02BF7BAD300CD8F5C /* TimerPhaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B262AAAF2BF7BAD300CD8F5C /* TimerPhaseView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B2321EDC2BF758020019061A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B2321ECE2BF758020019061A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B2321ED92BF758020019061A;
+			remoteInfo = "poca Watch App";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		B2321EED2BF758040019061A /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				B2321EDB2BF758020019061A /* poca Watch App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		B2321ED42BF758020019061A /* poca.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = poca.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B2321EDA2BF758020019061A /* poca Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "poca Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B2321EDF2BF758020019061A /* pocaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pocaApp.swift; sourceTree = "<group>"; };
+		B2321EE12BF758020019061A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		B2321EE32BF758040019061A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B2321EE62BF758040019061A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		B2321EF42BF758720019061A /* LandingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingView.swift; sourceTree = "<group>"; };
+		B262AAA42BF7688400CD8F5C /* CountDownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountDownView.swift; sourceTree = "<group>"; };
+		B262AAA92BF7A5AD00CD8F5C /* ButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyle.swift; sourceTree = "<group>"; };
+		B262AAAF2BF7BAD300CD8F5C /* TimerPhaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerPhaseView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B2321ED72BF758020019061A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B2321ECD2BF758020019061A = {
+			isa = PBXGroup;
+			children = (
+				B2321EDE2BF758020019061A /* poca Watch App */,
+				B2321ED52BF758020019061A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B2321ED52BF758020019061A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B2321ED42BF758020019061A /* poca.app */,
+				B2321EDA2BF758020019061A /* poca Watch App.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B2321EDE2BF758020019061A /* poca Watch App */ = {
+			isa = PBXGroup;
+			children = (
+				B262AAA82BF7A53D00CD8F5C /* style */,
+				B2321EF32BF758530019061A /* view */,
+				B2321EDF2BF758020019061A /* pocaApp.swift */,
+				B2321EE12BF758020019061A /* ContentView.swift */,
+				B2321EE32BF758040019061A /* Assets.xcassets */,
+				B2321EE52BF758040019061A /* Preview Content */,
+			);
+			path = "poca Watch App";
+			sourceTree = "<group>";
+		};
+		B2321EE52BF758040019061A /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				B2321EE62BF758040019061A /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		B2321EF32BF758530019061A /* view */ = {
+			isa = PBXGroup;
+			children = (
+				B2321EF42BF758720019061A /* LandingView.swift */,
+				B262AAA42BF7688400CD8F5C /* CountDownView.swift */,
+				B262AAAF2BF7BAD300CD8F5C /* TimerPhaseView.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		B262AAA82BF7A53D00CD8F5C /* style */ = {
+			isa = PBXGroup;
+			children = (
+				B262AAA92BF7A5AD00CD8F5C /* ButtonStyle.swift */,
+			);
+			path = style;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B2321ED32BF758020019061A /* poca */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B2321EEE2BF758040019061A /* Build configuration list for PBXNativeTarget "poca" */;
+			buildPhases = (
+				B2321ED22BF758020019061A /* Resources */,
+				B2321EED2BF758040019061A /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B2321EDD2BF758020019061A /* PBXTargetDependency */,
+			);
+			name = poca;
+			productName = poca;
+			productReference = B2321ED42BF758020019061A /* poca.app */;
+			productType = "com.apple.product-type.application.watchapp2-container";
+		};
+		B2321ED92BF758020019061A /* poca Watch App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B2321EEA2BF758040019061A /* Build configuration list for PBXNativeTarget "poca Watch App" */;
+			buildPhases = (
+				B2321ED62BF758020019061A /* Sources */,
+				B2321ED72BF758020019061A /* Frameworks */,
+				B2321ED82BF758020019061A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "poca Watch App";
+			productName = "poca Watch App";
+			productReference = B2321EDA2BF758020019061A /* poca Watch App.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B2321ECE2BF758020019061A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1530;
+				LastUpgradeCheck = 1530;
+				TargetAttributes = {
+					B2321ED32BF758020019061A = {
+						CreatedOnToolsVersion = 15.3;
+					};
+					B2321ED92BF758020019061A = {
+						CreatedOnToolsVersion = 15.3;
+					};
+				};
+			};
+			buildConfigurationList = B2321ED12BF758020019061A /* Build configuration list for PBXProject "poca" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B2321ECD2BF758020019061A;
+			productRefGroup = B2321ED52BF758020019061A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B2321ED32BF758020019061A /* poca */,
+				B2321ED92BF758020019061A /* poca Watch App */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B2321ED22BF758020019061A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B2321ED82BF758020019061A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B2321EE72BF758040019061A /* Preview Assets.xcassets in Resources */,
+				B2321EE42BF758040019061A /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B2321ED62BF758020019061A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B2321EF52BF758720019061A /* LandingView.swift in Sources */,
+				B2321EE22BF758020019061A /* ContentView.swift in Sources */,
+				B262AAB02BF7BAD300CD8F5C /* TimerPhaseView.swift in Sources */,
+				B262AAAA2BF7A5AD00CD8F5C /* ButtonStyle.swift in Sources */,
+				B262AAA52BF7688400CD8F5C /* CountDownView.swift in Sources */,
+				B2321EE02BF758020019061A /* pocaApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B2321EDD2BF758020019061A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B2321ED92BF758020019061A /* poca Watch App */;
+			targetProxy = B2321EDC2BF758020019061A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		B2321EE82BF758040019061A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		B2321EE92BF758040019061A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		B2321EEB2BF758040019061A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"poca Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = CK8M57PVR8;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = poca;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKWatchOnly = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = vikriyuwi.poca.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 10.4;
+			};
+			name = Debug;
+		};
+		B2321EEC2BF758040019061A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"poca Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = CK8M57PVR8;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = poca;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKWatchOnly = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = vikriyuwi.poca.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 10.4;
+			};
+			name = Release;
+		};
+		B2321EEF2BF758040019061A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = CK8M57PVR8;
+				INFOPLIST_KEY_CFBundleDisplayName = poca;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = vikriyuwi.poca;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		B2321EF02BF758040019061A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = CK8M57PVR8;
+				INFOPLIST_KEY_CFBundleDisplayName = poca;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = vikriyuwi.poca;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B2321ED12BF758020019061A /* Build configuration list for PBXProject "poca" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B2321EE82BF758040019061A /* Debug */,
+				B2321EE92BF758040019061A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B2321EEA2BF758040019061A /* Build configuration list for PBXNativeTarget "poca Watch App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B2321EEB2BF758040019061A /* Debug */,
+				B2321EEC2BF758040019061A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B2321EEE2BF758040019061A /* Build configuration list for PBXNativeTarget "poca" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B2321EEF2BF758040019061A /* Debug */,
+				B2321EF02BF758040019061A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B2321ECE2BF758020019061A /* Project object */;
+}

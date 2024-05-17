@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "PlaySymbol.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
