@@ -14,7 +14,7 @@ enum ActiveAlert {
 struct TimerPhaseView: View {
     @Binding var stepPomodoro:Int
     
-    @State private var timeRemaining:TimeInterval = 1500
+    @State private var timeRemaining:TimeInterval = 0
     @State private var timer:Timer?
     @State private var startTheTimer:Int = 1
     
@@ -62,7 +62,7 @@ struct TimerPhaseView: View {
                     VStack {
                         Text(formatedTime())
                             .font(.system(
-                                size: 36,
+                                size: 30,
                                 weight: .bold,
                                 design: .rounded
                             ))
@@ -74,7 +74,7 @@ struct TimerPhaseView: View {
                     VStack {
                         Text(stepPomodoro % 2 == 1 ? "REST\nTIME!" : "WORK\nTIME!")
                             .font(.system(
-                                size: 36,
+                                size: 30,
                                 weight: .bold,
                                 design: .rounded
                             ))
@@ -133,6 +133,7 @@ struct TimerPhaseView: View {
                             }
                             .buttonStyle(DarkButtonStyle())
                         }
+                        .padding(.bottom)
                     }
                 }
             }
@@ -168,6 +169,13 @@ struct TimerPhaseView: View {
     }
     
     private func startTimer() {
+        withAnimation(Animation.spring(duration:1), {
+            if stepPomodoro % 2 == 1 {
+                timeRemaining = 1499
+            } else {
+                timeRemaining = 299
+            }
+        })
         timer?.invalidate()
         timer = nil
         timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
@@ -179,7 +187,7 @@ struct TimerPhaseView: View {
                 WKInterfaceDevice.current().play(.success)
                 startTheTimer = 3
                 withAnimation(Animation.spring(duration:1), {
-                    orcaOffset2 = CGSize(width: 0, height: 36)
+                    orcaOffset2 = CGSize(width: 0, height: 26)
                 })
             }
         }
@@ -191,8 +199,9 @@ struct TimerPhaseView: View {
         WKInterfaceDevice.current().play(.success)
         startTheTimer = 3
         withAnimation(Animation.spring(duration:1), {
-            orcaOffset2 = CGSize(width: 0, height: 36)
+            orcaOffset2 = CGSize(width: 0, height: 26)
         })
+        timeRemaining = 0
     }
     
     private func nextPomodoro() {
@@ -210,6 +219,7 @@ struct TimerPhaseView: View {
         withAnimation(Animation.spring(duration:1), {
             orcaOffset2 = CGSize(width: 0, height: 200)
         })
+        timeRemaining = 0
     }
     
     private func stopPomodoro() {

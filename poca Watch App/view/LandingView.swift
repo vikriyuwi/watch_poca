@@ -55,13 +55,14 @@ struct LandingView: View {
                                     WKInterfaceDevice.current().play(.success)
                                     try? await Task.sleep(for: .seconds(1))
                                     stepPomodoro = 1
+                                    WKInterfaceDevice.current().play(.start)
                                 }
                             }
                         Spacer()
                     }
                     .onAppear {
                         withAnimation(Animation.spring(duration: 1), {
-                            orcaOffset = CGSize(width: 0, height: 36)
+                            orcaOffset = CGSize(width: 0, height: 26)
                         })
                     }
                 } else {
