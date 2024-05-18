@@ -55,14 +55,24 @@ class TimerManager: ObservableObject {
     }
     
     private func scheduleNotification() {
-        guard let endTime = endTime else { return }
-
         let content = UNMutableNotificationContent()
         content.title = "Timer Ended"
         content.body = "Your countdown timer has finished."
         content.sound = UNNotificationSound.default
 
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: endTime.timeIntervalSinceNow, repeats: false)
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: duration, repeats: false)
+        let request = UNNotificationRequest(identifier: "TimerNotification", content: content, trigger: trigger)
+
+        UNUserNotificationCenter.current().add(request)
+    }
+    
+    private func scheduleNotification2() {
+        let content = UNMutableNotificationContent()
+        content.title = "Timer Ended"
+        content.body = "Your countdown timer has finished."
+        content.sound = UNNotificationSound.default
+
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: TimeInterval(2), repeats: false)
         let request = UNNotificationRequest(identifier: "TimerNotification", content: content, trigger: trigger)
 
         UNUserNotificationCenter.current().add(request)

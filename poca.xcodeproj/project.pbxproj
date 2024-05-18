@@ -17,6 +17,7 @@
 		B262AAA52BF7688400CD8F5C /* CountDownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B262AAA42BF7688400CD8F5C /* CountDownView.swift */; };
 		B262AAAA2BF7A5AD00CD8F5C /* ButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B262AAA92BF7A5AD00CD8F5C /* ButtonStyle.swift */; };
 		B262AAB02BF7BAD300CD8F5C /* TimerPhaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B262AAAF2BF7BAD300CD8F5C /* TimerPhaseView.swift */; };
+		B2F9ACBF2BF8CCAC00BBC440 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F9ACBE2BF8CCAC00BBC440 /* AppDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		B262AAA42BF7688400CD8F5C /* CountDownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountDownView.swift; sourceTree = "<group>"; };
 		B262AAA92BF7A5AD00CD8F5C /* ButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyle.swift; sourceTree = "<group>"; };
 		B262AAAF2BF7BAD300CD8F5C /* TimerPhaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerPhaseView.swift; sourceTree = "<group>"; };
+		B2F9ACBE2BF8CCAC00BBC440 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				B260E0232BF8967200588656 /* TimerManager.swift */,
+				B2F9ACBE2BF8CCAC00BBC440 /* AppDelegate.swift */,
 			);
 			path = service;
 			sourceTree = "<group>";
@@ -235,6 +238,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2F9ACBF2BF8CCAC00BBC440 /* AppDelegate.swift in Sources */,
 				B2321EF52BF758720019061A /* LandingView.swift in Sources */,
 				B2321EE22BF758020019061A /* ContentView.swift in Sources */,
 				B262AAB02BF7BAD300CD8F5C /* TimerPhaseView.swift in Sources */,
