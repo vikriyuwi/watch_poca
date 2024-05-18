@@ -12,16 +12,21 @@ enum ActiveAlert {
 }
 
 struct TimerPhaseView: View {
+    
+    @StateObject var timerManager = TimerManager()
     @Binding var stepPomodoro:Int
     
-    @State private var timeRemaining:TimeInterval = 0
-    @State private var timer:Timer?
-    @State private var startTheTimer:Int = 1
+//    @State private var timeRemaining:TimeInterval = 0
+//    @State private var timer:Timer?
+//    @State private var startTheTimer:Int = 1
     
     @State private var activeAlert: ActiveAlert?
     @State private var isAlertPresented = false
     
     @State var orcaOffset2:CGSize = CGSize(width: 0, height: 200)
+    
+    let durationWork:Double = 1500
+    let durationRest:Double = 300
     
     var body: some View {
         NavigationStack {
@@ -32,24 +37,27 @@ struct TimerPhaseView: View {
                         .resizable()
                         .scaledToFit()
                         .frame(width: .infinity)
-                        .offset(orcaOffset2)
+                        .offset(timerManager.orcaOffset)
                 }
                 .ignoresSafeArea()
-                if startTheTimer == 1 && stepPomodoro > 0 {
+                if timerManager.timerPhase == 1 && stepPomodoro > 0 {
                     CountDownView()
                         .onAppear {
                             Task {
                                 try? await Task.sleep(for: .seconds(3))
-                                startTheTimer = 2
+                                timerManager.timerPhase = 2
                             }
                         }
-                } else if startTheTimer == 2 {
+                } else if timerManager.timerPhase == 2 {
                     Circle()
                         .stroke(.white.opacity(0.1), style: StrokeStyle(lineWidth: CGFloat(20), lineCap: .round, lineJoin: .round))
                         .background(Color.clear)
                         .rotationEffect(Angle(degrees: -90))
                     Circle()
-                        .trim(from: 0, to: stepPomodoro % 2 == 1 ? CGFloat(1 - (timeRemaining / 1500)) : CGFloat(1 - (timeRemaining / 300)))
+                        .trim(from: 0, to: stepPomodoro % 2 == 1 ?
+                              CGFloat(1 - (timerManager.remainingTime / durationWork))
+                              :
+                                CGFloat(1 - (timerManager.remainingTime / durationRest)))
                         .stroke(stepPomodoro % 2 == 1 ? .blue30 : .green30, style: StrokeStyle(lineWidth: CGFloat(20), lineCap: .round, lineJoin: .round))
                         .background(Color.clear)
                         .shadow(color: stepPomodoro % 2 == 1 ? .blueBase : .greenBase,radius: 10)
@@ -60,7 +68,7 @@ struct TimerPhaseView: View {
                             }
                         }
                     VStack {
-                        Text(formatedTime())
+                        Text(timerManager.timeString)
                             .font(.system(
                                 size: 30,
                                 weight: .bold,
@@ -70,7 +78,7 @@ struct TimerPhaseView: View {
                         Text(stepPomodoro % 2 == 1 ? "do work" : "do rest")
                             .foregroundColor(.gray)
                     }
-                } else if startTheTimer == 3 {
+                } else if timerManager.timerPhase == 3 {
                     VStack {
                         Text(stepPomodoro % 2 == 1 ? "REST\nTIME!" : "WORK\nTIME!")
                             .font(.system(
@@ -87,7 +95,7 @@ struct TimerPhaseView: View {
                 }
             }
             .toolbar {
-                if startTheTimer == 2 {
+                if timerManager.timerPhase == 2 {
                     ToolbarItem(placement: .bottomBar) {
                         HStack {
                             Button {
@@ -104,12 +112,12 @@ struct TimerPhaseView: View {
                                 isAlertPresented = true
                                 activeAlert = .nextPomodoro
                             } label: {
-                                Image(systemName: "checkmark")
+                                Image(systemName: "chevron.forward.2")
                                     .foregroundColor(.greenBase)
                             }
                         }
                     }
-                } else if startTheTimer == 3 {
+                } else if timerManager.timerPhase == 3 {
                     ToolbarItem(placement:.bottomBar) {
                         HStack {
                             Button {
@@ -120,7 +128,7 @@ struct TimerPhaseView: View {
                             }
                             .buttonStyle(GreyButtonStyle())
                             Button {
-                                nextPomodoro()
+                                nextPhase()
                             } label: {
                                 HStack {
                                     Spacer()
@@ -153,80 +161,87 @@ struct TimerPhaseView: View {
                     title: Text("Skip step?"),
                     primaryButton: .cancel(Text("CANCEL")),
                     secondaryButton: .default(Text(stepPomodoro % 2 == 1 ? "REST" : "WORK"), action: {
-                        skipPomodoro()
+                        skipAPhase()
                     })
                 )
             case .none:
                 return Alert(title: Text("Unknown Alert"))
             }
         })
-    }
-    
-    private func formatedTime() -> String {
-        let minute = Int(timeRemaining) / 60
-        let second = Int(timeRemaining) % 60
-        return String(format: "%02d:%02d", minute, second)
+        .onAppear {
+            timerManager.timerPhase = 1
+        }
     }
     
     private func startTimer() {
+        // do animation
         withAnimation(Animation.spring(duration:1), {
             if stepPomodoro % 2 == 1 {
-                timeRemaining = 1499
+                timerManager.duration = TimeInterval(durationWork - 1)
             } else {
-                timeRemaining = 299
+                timerManager.duration = TimeInterval(durationRest - 1)
             }
         })
-        timer?.invalidate()
-        timer = nil
-        timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
-            if timeRemaining > 0 {
-                timeRemaining -= 1
-            } else {
-                timer?.invalidate()
-                timer = nil
-                WKInterfaceDevice.current().play(.success)
-                startTheTimer = 3
-                withAnimation(Animation.spring(duration:1), {
-                    orcaOffset2 = CGSize(width: 0, height: 26)
-                })
-            }
-        }
-    }
-    
-    private func skipPomodoro() {
-        timer?.invalidate()
-        timer = nil
-        WKInterfaceDevice.current().play(.success)
-        startTheTimer = 3
-        withAnimation(Animation.spring(duration:1), {
-            orcaOffset2 = CGSize(width: 0, height: 26)
-        })
-        timeRemaining = 0
-    }
-    
-    private func nextPomodoro() {
-        timer?.invalidate()
-        timer = nil
-        WKInterfaceDevice.current().play(.directionUp)
+            
+        // set timer manager
         if stepPomodoro % 2 == 1 {
-            startTheTimer = 2
-            timeRemaining = 300
+            timerManager.start(duration: TimeInterval(durationWork))
         } else {
-            startTheTimer = 1
-            timeRemaining = 1500
+            timerManager.start(duration: TimeInterval(durationRest))
         }
+    }
+    
+    private func stopTimer() {
+        timerManager.stop()
+    }
+    
+    private func nextPhase() {
+        // notify using haptic
+        WKInterfaceDevice.current().play(.directionUp)
+        
+        withAnimation(Animation.spring(duration: 1)) {
+            timerManager.orcaOffset = CGSize(width: 0, height: 200)
+        }
+        
+        // stop and arange data
+        stopTimer()
         stepPomodoro += 1
-        withAnimation(Animation.spring(duration:1), {
-            orcaOffset2 = CGSize(width: 0, height: 200)
-        })
-        timeRemaining = 0
+        if stepPomodoro % 2 == 1 {
+            timerManager.timerPhase = 1
+            timerManager.duration = TimeInterval(durationWork)
+        } else {
+            timerManager.timerPhase = 2
+            timerManager.duration = TimeInterval(durationRest)
+        }
+    }
+    
+    private func skipAPhase() {
+        // notify using haptic
+        WKInterfaceDevice.current().play(.directionUp)
+        
+        // stop and arange data
+        stopTimer()
+        timerManager.timerPhase = 3
+        withAnimation(Animation.spring(duration: 1)) {
+            timerManager.orcaOffset = CGSize(width: 0, height: 26)
+        }
+//        stepPomodoro += 1
+//        if stepPomodoro % 2 == 1 {
+//            timerManager.timerPhase = 1
+//        } else {
+//            timerManager.timerPhase = 2
+//            timerManager.start(duration: TimeInterval(durationRest))
+//        }
     }
     
     private func stopPomodoro() {
+        // notify using haptic
         WKInterfaceDevice.current().play(.failure)
-        timer?.invalidate()
-        timer = nil
+        
+        // stop and arange data
+        stopTimer()
         stepPomodoro = 0
+        timerManager.timerPhase = 0
     }
 }
 

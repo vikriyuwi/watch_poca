@@ -13,6 +13,7 @@
 		B2321EE42BF758040019061A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2321EE32BF758040019061A /* Assets.xcassets */; };
 		B2321EE72BF758040019061A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2321EE62BF758040019061A /* Preview Assets.xcassets */; };
 		B2321EF52BF758720019061A /* LandingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2321EF42BF758720019061A /* LandingView.swift */; };
+		B260E0242BF8967200588656 /* TimerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B260E0232BF8967200588656 /* TimerManager.swift */; };
 		B262AAA52BF7688400CD8F5C /* CountDownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B262AAA42BF7688400CD8F5C /* CountDownView.swift */; };
 		B262AAAA2BF7A5AD00CD8F5C /* ButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B262AAA92BF7A5AD00CD8F5C /* ButtonStyle.swift */; };
 		B262AAB02BF7BAD300CD8F5C /* TimerPhaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B262AAAF2BF7BAD300CD8F5C /* TimerPhaseView.swift */; };
@@ -50,6 +51,9 @@
 		B2321EE32BF758040019061A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B2321EE62BF758040019061A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B2321EF42BF758720019061A /* LandingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingView.swift; sourceTree = "<group>"; };
+		B260E0232BF8967200588656 /* TimerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerManager.swift; sourceTree = "<group>"; };
+		B260E0252BF8977400588656 /* poca-Watch-App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "poca-Watch-App-Info.plist"; sourceTree = SOURCE_ROOT; };
+		B260E0262BF8977E00588656 /* poca Watch App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "poca Watch App.entitlements"; sourceTree = "<group>"; };
 		B262AAA42BF7688400CD8F5C /* CountDownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountDownView.swift; sourceTree = "<group>"; };
 		B262AAA92BF7A5AD00CD8F5C /* ButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyle.swift; sourceTree = "<group>"; };
 		B262AAAF2BF7BAD300CD8F5C /* TimerPhaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerPhaseView.swift; sourceTree = "<group>"; };
@@ -86,6 +90,9 @@
 		B2321EDE2BF758020019061A /* poca Watch App */ = {
 			isa = PBXGroup;
 			children = (
+				B260E0262BF8977E00588656 /* poca Watch App.entitlements */,
+				B260E0252BF8977400588656 /* poca-Watch-App-Info.plist */,
+				B260E0222BF8965B00588656 /* service */,
 				B262AAA82BF7A53D00CD8F5C /* style */,
 				B2321EF32BF758530019061A /* view */,
 				B2321EDF2BF758020019061A /* pocaApp.swift */,
@@ -112,6 +119,14 @@
 				B262AAAF2BF7BAD300CD8F5C /* TimerPhaseView.swift */,
 			);
 			path = view;
+			sourceTree = "<group>";
+		};
+		B260E0222BF8965B00588656 /* service */ = {
+			isa = PBXGroup;
+			children = (
+				B260E0232BF8967200588656 /* TimerManager.swift */,
+			);
+			path = service;
 			sourceTree = "<group>";
 		};
 		B262AAA82BF7A53D00CD8F5C /* style */ = {
@@ -225,6 +240,7 @@
 				B262AAB02BF7BAD300CD8F5C /* TimerPhaseView.swift in Sources */,
 				B262AAAA2BF7A5AD00CD8F5C /* ButtonStyle.swift in Sources */,
 				B262AAA52BF7688400CD8F5C /* CountDownView.swift in Sources */,
+				B260E0242BF8967200588656 /* TimerManager.swift in Sources */,
 				B2321EE02BF758020019061A /* pocaApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -359,12 +375,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "poca Watch App/poca Watch App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"poca Watch App/Preview Content\"";
 				DEVELOPMENT_TEAM = CK8M57PVR8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "poca-Watch-App-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = poca;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKWatchOnly = YES;
@@ -373,7 +391,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = vikriyuwi.poca.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = vikriyuwi.poca1.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -389,12 +407,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "poca Watch App/poca Watch App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"poca Watch App/Preview Content\"";
 				DEVELOPMENT_TEAM = CK8M57PVR8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "poca-Watch-App-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = poca;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKWatchOnly = YES;
@@ -403,7 +423,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = vikriyuwi.poca.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = vikriyuwi.poca1.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;

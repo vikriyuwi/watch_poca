@@ -23,7 +23,6 @@ struct LandingView: View {
                         Image("OrcaTummy")
                             .resizable()
                             .scaledToFit()
-                            .frame(width: .infinity)
                             .offset(orcaOffset)
                     }
                     .ignoresSafeArea()
