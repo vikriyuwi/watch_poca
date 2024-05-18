@@ -55,9 +55,10 @@ struct TimerPhaseView: View {
                         .rotationEffect(Angle(degrees: -90))
                     Circle()
                         .trim(from: 0, to: stepPomodoro % 2 == 1 ?
-                              CGFloat(1 - (timerManager.remainingTime / durationWork))
+                              CGFloat (timerManager.remainingTime / durationWork)
                               :
-                                CGFloat(1 - (timerManager.remainingTime / durationRest)))
+                                CGFloat (timerManager.remainingTime / durationRest)
+                        )
                         .stroke(stepPomodoro % 2 == 1 ? .blue30 : .green30, style: StrokeStyle(lineWidth: CGFloat(20), lineCap: .round, lineJoin: .round))
                         .background(Color.clear)
                         .shadow(color: stepPomodoro % 2 == 1 ? .blueBase : .greenBase,radius: 10)
@@ -174,14 +175,19 @@ struct TimerPhaseView: View {
     }
     
     private func startTimer() {
-        // do animation
-        withAnimation(Animation.spring(duration:1), {
-            if stepPomodoro % 2 == 1 {
-                timerManager.duration = TimeInterval(durationWork - 1)
-            } else {
-                timerManager.duration = TimeInterval(durationRest - 1)
-            }
-        })
+        Task {
+            timerManager.remainingTime = 0
+            try? await Task.sleep(nanoseconds: 1)
+            // do animation
+            withAnimation(Animation.spring(duration:1), {
+                if stepPomodoro % 2 == 1 {
+                    timerManager.remainingTime = TimeInterval(durationWork)
+                } else {
+                    timerManager.remainingTime = TimeInterval(durationRest)
+                }
+            })
+        }
+        
             
         // set timer manager
         if stepPomodoro % 2 == 1 {
