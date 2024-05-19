@@ -76,12 +76,12 @@ struct TimerPhaseView: View {
                                 design: .rounded
                             ))
                             .foregroundColor(stepPomodoro % 2 == 1 ? .blue30 : .green30)
-                        Text(stepPomodoro % 2 == 1 ? "do work" : "do rest")
+                        Text(stepPomodoro % 2 == 1 ? "focus" : "rest")
                             .foregroundColor(.gray)
                     }
                 } else if timerManager.timerPhase == 3 {
                     VStack {
-                        Text(stepPomodoro % 2 == 1 ? "REST\nTIME!" : "WORK\nTIME!")
+                        Text(stepPomodoro % 2 == 1 ? "REST\nTIME!" : "FOCUS\nTIME!")
                             .font(.system(
                                 size: 30,
                                 weight: .bold,
@@ -133,7 +133,7 @@ struct TimerPhaseView: View {
                             } label: {
                                 HStack {
                                     Spacer()
-                                    Text(stepPomodoro % 2 == 1 ? "REST" : "WORK")
+                                    Text(stepPomodoro % 2 == 1 ? "REST" : "FOCUS")
                                         .font(.system(.headline, design: .rounded))
                                         .foregroundColor(stepPomodoro % 2 == 1 ? .green30 : .blue30)
                                     Spacer()
@@ -161,7 +161,7 @@ struct TimerPhaseView: View {
                 return Alert(
                     title: Text("Skip step?"),
                     primaryButton: .cancel(Text("CANCEL")),
-                    secondaryButton: .default(Text(stepPomodoro % 2 == 1 ? "REST" : "WORK"), action: {
+                    secondaryButton: .default(Text(stepPomodoro % 2 == 1 ? "REST" : "FOCUS"), action: {
                         skipAPhase()
                     })
                 )
