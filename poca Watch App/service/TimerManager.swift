@@ -41,6 +41,7 @@ class TimerManager: ObservableObject {
             withAnimation(Animation.spring(duration: 1)) {
                 orcaOffset = CGSize(width: 0, height: 26)
             }
+            WKInterfaceDevice.current().play(.success)
             stop()
             // if stopped
         } else {
@@ -59,7 +60,7 @@ class TimerManager: ObservableObject {
         content.title = "Timer Ended"
         content.body = "Your countdown timer has finished."
         content.sound = UNNotificationSound.default
-
+        
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: duration, repeats: false)
         let request = UNNotificationRequest(identifier: "TimerNotification", content: content, trigger: trigger)
 
