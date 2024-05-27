@@ -7,19 +7,6 @@
 
 import SwiftUI
 
-struct RoundedFontModifier: ViewModifier {
-    func body(content: Content) -> some View {
-        content
-            .font(.system(.body, design: .rounded))
-    }
-}
-
-extension View {
-    func roundedFont() -> some View {
-        self.modifier(RoundedFontModifier())
-    }
-}
-
 struct CountDownView: View {
     @State var scale3:Double = 1
     @State var opacity3:Double = 0

@@ -20,7 +20,6 @@ class AppDelegate: NSObject, WKApplicationDelegate, UNUserNotificationCenterDele
             }
         }
     }
-        
 
     // Handle foreground notification
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {

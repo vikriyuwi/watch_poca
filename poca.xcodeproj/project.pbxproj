@@ -17,6 +17,7 @@
 		B262AAA52BF7688400CD8F5C /* CountDownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B262AAA42BF7688400CD8F5C /* CountDownView.swift */; };
 		B262AAAA2BF7A5AD00CD8F5C /* ButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B262AAA92BF7A5AD00CD8F5C /* ButtonStyle.swift */; };
 		B262AAB02BF7BAD300CD8F5C /* TimerPhaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B262AAAF2BF7BAD300CD8F5C /* TimerPhaseView.swift */; };
+		B2D9B6712C032568008BD061 /* PickerStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D9B6702C032568008BD061 /* PickerStyle.swift */; };
 		B2F9ACBF2BF8CCAC00BBC440 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F9ACBE2BF8CCAC00BBC440 /* AppDelegate.swift */; };
 /* End PBXBuildFile section */
 
@@ -58,6 +59,7 @@
 		B262AAA42BF7688400CD8F5C /* CountDownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountDownView.swift; sourceTree = "<group>"; };
 		B262AAA92BF7A5AD00CD8F5C /* ButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyle.swift; sourceTree = "<group>"; };
 		B262AAAF2BF7BAD300CD8F5C /* TimerPhaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerPhaseView.swift; sourceTree = "<group>"; };
+		B2D9B6702C032568008BD061 /* PickerStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerStyle.swift; sourceTree = "<group>"; };
 		B2F9ACBE2BF8CCAC00BBC440 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -94,11 +96,10 @@
 			children = (
 				B260E0262BF8977E00588656 /* poca Watch App.entitlements */,
 				B260E0252BF8977400588656 /* poca-Watch-App-Info.plist */,
-				B260E0222BF8965B00588656 /* service */,
-				B262AAA82BF7A53D00CD8F5C /* style */,
-				B2321EF32BF758530019061A /* view */,
+				B2D9B6722C0325B8008BD061 /* ViewModel */,
+				B2D9B6752C032645008BD061 /* View */,
 				B2321EDF2BF758020019061A /* pocaApp.swift */,
-				B2321EE12BF758020019061A /* ContentView.swift */,
+				B2F9ACBE2BF8CCAC00BBC440 /* AppDelegate.swift */,
 				B2321EE32BF758040019061A /* Assets.xcassets */,
 				B2321EE52BF758040019061A /* Preview Content */,
 			);
@@ -113,31 +114,33 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		B2321EF32BF758530019061A /* view */ = {
-			isa = PBXGroup;
-			children = (
-				B2321EF42BF758720019061A /* LandingView.swift */,
-				B262AAA42BF7688400CD8F5C /* CountDownView.swift */,
-				B262AAAF2BF7BAD300CD8F5C /* TimerPhaseView.swift */,
-			);
-			path = view;
-			sourceTree = "<group>";
-		};
-		B260E0222BF8965B00588656 /* service */ = {
-			isa = PBXGroup;
-			children = (
-				B260E0232BF8967200588656 /* TimerManager.swift */,
-				B2F9ACBE2BF8CCAC00BBC440 /* AppDelegate.swift */,
-			);
-			path = service;
-			sourceTree = "<group>";
-		};
 		B262AAA82BF7A53D00CD8F5C /* style */ = {
 			isa = PBXGroup;
 			children = (
 				B262AAA92BF7A5AD00CD8F5C /* ButtonStyle.swift */,
+				B2D9B6702C032568008BD061 /* PickerStyle.swift */,
 			);
 			path = style;
+			sourceTree = "<group>";
+		};
+		B2D9B6722C0325B8008BD061 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				B260E0232BF8967200588656 /* TimerManager.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		B2D9B6752C032645008BD061 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B262AAA82BF7A53D00CD8F5C /* style */,
+				B2321EF42BF758720019061A /* LandingView.swift */,
+				B262AAA42BF7688400CD8F5C /* CountDownView.swift */,
+				B262AAAF2BF7BAD300CD8F5C /* TimerPhaseView.swift */,
+				B2321EE12BF758020019061A /* ContentView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -240,6 +243,7 @@
 			files = (
 				B2F9ACBF2BF8CCAC00BBC440 /* AppDelegate.swift in Sources */,
 				B2321EF52BF758720019061A /* LandingView.swift in Sources */,
+				B2D9B6712C032568008BD061 /* PickerStyle.swift in Sources */,
 				B2321EE22BF758020019061A /* ContentView.swift in Sources */,
 				B262AAB02BF7BAD300CD8F5C /* TimerPhaseView.swift in Sources */,
 				B262AAAA2BF7A5AD00CD8F5C /* ButtonStyle.swift in Sources */,
@@ -381,7 +385,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "poca Watch App/poca Watch App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 1.2;
 				DEVELOPMENT_ASSET_PATHS = "\"poca Watch App/Preview Content\"";
 				DEVELOPMENT_TEAM = CK8M57PVR8;
 				ENABLE_PREVIEWS = YES;
@@ -394,7 +398,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = vikriyuwi.poca.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
@@ -413,7 +417,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "poca Watch App/poca Watch App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 1.2;
 				DEVELOPMENT_ASSET_PATHS = "\"poca Watch App/Preview Content\"";
 				DEVELOPMENT_TEAM = CK8M57PVR8;
 				ENABLE_PREVIEWS = YES;
@@ -426,7 +430,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = vikriyuwi.poca.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
